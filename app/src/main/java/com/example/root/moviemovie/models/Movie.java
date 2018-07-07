@@ -11,6 +11,18 @@ public class Movie {
     String originalTitle;
     String overview;
 
+    public String getPosterPath() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s",posterPath);
+    }
+
+    public String getOriginalTitle() {
+        return originalTitle;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
     public Movie(JSONObject jsonObject) throws JSONException{
         this.posterPath = jsonObject.getString("poster_path");
         this.originalTitle = jsonObject.getString("original_title");
@@ -22,12 +34,11 @@ public class Movie {
 
         for(int x=0; x<array.length(); x++ ){
             try {
-                new Movie(array.getJSONObject(x));
+                results.add(new Movie(array.getJSONObject(x)));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
-
+        return results;
     }
 }
