@@ -1,7 +1,8 @@
 package com.example.root.moviemovie;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.example.root.moviemovie.adapters.MovieArrayAdapter;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     movieJsonResults = response.getJSONArray("results");
                     movies.addAll(Movie.fromJSONarray(movieJsonResults));
                     adapter.notifyDataSetChanged();
+                    Log.d("DEBUG", movies.toString());
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
