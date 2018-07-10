@@ -10,6 +10,11 @@ public class Movie {
     String posterPath;
     String originalTitle;
     String overview;
+    String backdrop;
+
+    public String getBackdrop() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s",backdrop);
+    }
 
     public String getPosterPath() {
         return String.format("https://image.tmdb.org/t/p/w342/%s",posterPath);
@@ -27,6 +32,7 @@ public class Movie {
         this.posterPath = jsonObject.getString("poster_path");
         this.originalTitle = jsonObject.getString("original_title");
         this.overview = jsonObject.getString("overview");
+        this.backdrop = jsonObject.getString("backdrop_path");
     }
 
     public static ArrayList<Movie> fromJSONarray(JSONArray array){
