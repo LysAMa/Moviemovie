@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.root.moviemovie.R;
 import com.example.root.moviemovie.models.Movie;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,19 +28,19 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
 
         if(convertView == null){
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            inflater.inflate(R.layout.item_movie, parent, false);
+            convertView = inflater.inflate(R.layout.item_movie, parent, false);
         }
 
-        ImageView ivMovie = (ImageView) convertView.findViewById(R.id.iv);
-        ivMovie.setImageResource(0);
+        ImageView ivImage = (ImageView) convertView.findViewById(R.id.ivMovie);
+        ivImage.setImageResource(0);
 
         TextView title = (TextView) convertView.findViewById(R.id.tvTitre);
-        title.setText(movie.getOriginalTitle());
-
         TextView desc = (TextView) convertView.findViewById(R.id.tvDesc);
+
+        title.setText(movie.getOriginalTitle());
         desc.setText(movie.getOverview());
 
-       // Picasso.with(getContext()).load(movie.getPosterPath()).into(ivMovie);
+        Picasso.with(getContext()).load(movie.getPosterPath()).into(ivImage);
 
         return convertView;
 

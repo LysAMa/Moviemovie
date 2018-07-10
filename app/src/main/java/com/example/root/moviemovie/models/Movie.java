@@ -32,7 +32,7 @@ public class Movie {
     public static ArrayList<Movie> fromJSONarray(JSONArray array){
         ArrayList<Movie> results = new ArrayList<>();
 
-        for(int x=0; x<array.length(); x++ ){
+        for(int x = 0; x < array.length(); x++ ){
             try {
                 results.add(new Movie(array.getJSONObject(x)));
             } catch (JSONException e) {
