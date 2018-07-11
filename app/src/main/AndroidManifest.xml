@@ -6,16 +6,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ico"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+<<<<<<< HEAD
 
         </activity>
         <activity android:name=".splash"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+=======
+>>>>>>> parent of fe87eef... design thing
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
