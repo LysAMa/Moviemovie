@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Movie> movies;
     MovieArrayAdapter adapter;
     ListView LvItems;
+    private final int REQUEST_CODE = 20;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent =new Intent(MainActivity.this, SingleMovie.class);
-                startActivity(intent);
+                intent.putExtra("pos", i);
+                startActivityForResult(intent, REQUEST_CODE);
 
             }
         });
