@@ -24,13 +24,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Movie> movies;
     MovieArrayAdapter adapter;
     ListView LvItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // ButterKnife.bind(this);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_title);
+
 
         LvItems = (ListView)findViewById(R.id.lv);
         movies = new ArrayList<>();
