@@ -1,8 +1,11 @@
 package com.example.root.moviemovie;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.root.moviemovie.adapters.MovieArrayAdapter;
@@ -28,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ico);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         LvItems = (ListView)findViewById(R.id.lv);
         movies = new ArrayList<>();
@@ -51,11 +56,23 @@ public class MainActivity extends AppCompatActivity {
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
+                MovieListViewListener();
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+            }
+        });
+    }
+
+    public void MovieListViewListener(){
+        LvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent =new Intent(MainActivity.this, SingleMovie.class);
+                startActivity(intent);
+
             }
         });
     }

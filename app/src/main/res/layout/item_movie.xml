@@ -6,32 +6,37 @@
 
     <ImageView
         android:id="@+id/ivMovie"
-        android:layout_width="170dp"
-        android:layout_height="135dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        tools:src="@mipmap/ic_launcher" />
+        tools:src="@mipmap/ic_launcher"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/tvTitre"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/ivMovie"
         android:layout_toRightOf="@+id/ivMovie"
+        android:textColor="@color/colorAccent"
         tools:text="Nom de film"
+        android:layout_marginLeft="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/tvDesc"
-        android:layout_width="121dp"
-        android:layout_height="107dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ivMovie"
         android:layout_below="@+id/tvTitre"
         android:layout_marginBottom="-2dp"
+        android:layout_marginLeft="10dp"
         android:layout_toEndOf="@+id/ivMovie"
         android:layout_toRightOf="@+id/ivMovie"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/colorAccent" />
 
 </RelativeLayout>

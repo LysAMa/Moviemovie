@@ -17,6 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 public class MovieArrayAdapter extends ArrayAdapter<Movie>{
     private static class ViewHolder {
         ImageView ivImage;
@@ -51,9 +53,9 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
 
         int orientation = getContext().getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Picasso.with(getContext()).load(movie.getPosterPath()).fit().centerCrop().placeholder(R.drawable.ic_launcher_background).into(viewHolder.ivImage);
+            Picasso.with(getContext()).load(movie.getPosterPath()).fit().centerCrop().placeholder(R.drawable.ic_launcher_background).transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.ivImage);
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Picasso.with(getContext()).load(movie.getBackdrop()).fit().centerCrop().placeholder(R.drawable.ic_launcher_background).into(viewHolder.ivImage);
+            Picasso.with(getContext()).load(movie.getBackdrop()).fit().centerCrop().placeholder(R.drawable.ph).transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.ivImage);
 
         }
 
