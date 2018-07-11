@@ -12,14 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-<<<<<<< HEAD
+
 
         </activity>
         <activity android:name=".splash"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-=======
->>>>>>> parent of fe87eef... design thing
-            <intent-filter>
+<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

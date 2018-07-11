@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:background="@drawable/mov"
-=======
->>>>>>> parent of fe87eef... design thing
+
     tools:context=".MainActivity">
 
     <ListView
